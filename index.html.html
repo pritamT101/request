@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Girlfriend?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+
+    .button {
+      font-size: 20px;
+      padding: 15px 30px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #ff1493;
+    }
+
+    #cuteMessage {
+      display: none;
+      font-size: 25px;
+      margin-top: 20px;
+      color: #ff6347;
+    }
+
+    #heart {
+      display: none;
+      font-size: 50px;
+      margin-top: 30px;
+      color: #ff1493;
+    }
+
+    .moving {
+      animation: move 2s infinite;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(100px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Will you be my girlfriend?</h1>
+  <div>
+    <button class="button" id="yesBtn">Yes</button>
+    <button class="button" id="noBtn">No</button>
+  </div>
+
+  <div id="cuteMessage">Aww, thank you! 😍</div>
+  <div id="heart">❤️</div>
+
+  <script>
+    document.getElementById('yesBtn').addEventListener('click', function() {
+      document.getElementById('cuteMessage').style.display = 'block';
+      document.getElementById('heart').style.display = 'block';
+    });
+
+    document.getElementById('noBtn').addEventListener('click', function() {
+      document.body.classList.add('moving');
+    });
+  </script>
+</body>
+</html>
